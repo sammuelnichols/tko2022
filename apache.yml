@@ -15,5 +15,5 @@
         state: enabled
     - name: Restart Firewall
       service:
-        name: firewall
+        name: firewalld
         state: restarted
