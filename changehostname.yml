@@ -1,0 +1,6 @@
+---
+- hosts: server
+  tasks:
+  - name: Update Hostname
+    hostname:
+      name: "{{ new_hostname }}"
