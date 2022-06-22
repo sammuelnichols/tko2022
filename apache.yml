@@ -2,5 +2,22 @@
 - hosts: server
   become: root
   tasks:
-    - name: install apache2
+    - name: Install Apache
       yum: name=httpd update_cache=yes state=latest
+    - name: Enable Apache
+      service:
+        name: httpd
+        state: enabled
+    - name: Start Apache
+      service:
+        name: httpd
+        state: started
+    - name: Allow HTTP
+      firewalld:
+        service: http
+        permanent: true
+        state: enabled
+    - name: Restart Firewall
+      service:
+        name: firewall
+        state: restarted
