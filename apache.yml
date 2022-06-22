@@ -4,10 +4,6 @@
   tasks:
     - name: Install Apache
       yum: name=httpd update_cache=yes state=latest
-    - name: Enable Apache
-      service:
-        name: httpd
-        state: enabled
     - name: Start Apache
       service:
         name: httpd
